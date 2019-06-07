@@ -3,7 +3,7 @@ pipeline {
     
     stages{
         stage('codecheckout'){
-            //agent { label 'master'}
+            agent { label 'master'}
             steps {
                 script{
                     sh "echo hello "
@@ -11,7 +11,7 @@ pipeline {
             }
         }
         stage('build'){
-            //agent { label 'master'}
+            agent { label 'master'}
             steps {
                 script{
                     sh "echo build "
