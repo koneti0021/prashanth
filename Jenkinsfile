@@ -1,9 +1,12 @@
 pipeline {
-    agent none
+	agent { label 'master'}
+	options {
+    skipDefaultCheckout true
+  }
     
     stages{
         stage('codecheckout'){
-            agent { label 'master'}
+            //agent { label 'master'}
             steps {
                 script{
                     sh "echo hello "
@@ -11,7 +14,7 @@ pipeline {
             }
         }
         stage('build'){
-            agent { label 'master'}
+            //agent { label 'master'}
             steps {
                 script{
                     sh "echo build "
@@ -19,7 +22,7 @@ pipeline {
             }
         }
 		stage('Test'){
-            agent { label 'master'}
+            //agent { label 'master'}
             steps {
                 script{
                     sh "echo Test "
@@ -27,7 +30,7 @@ pipeline {
             }
         }
         stage('Deploy'){
-            agent { label 'master'}
+            //agent { label 'master'}
             steps {
                 script{
                     sh "echo Test "
@@ -35,7 +38,7 @@ pipeline {
             }
         }
         stage('Release'){
-            agent { label 'master'}
+            //agent { label 'master'}
             steps {
                 script{
                     sh "echo Test "
